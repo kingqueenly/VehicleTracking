@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VT" Class="VTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=VT;Persist Security Info=True;User ID=sa" SettingsObjectName="VT.DCM.Server.Properties.Settings" SettingsPropertyName="VTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CarInfo" Member="CarInfo">
+    <Type Name="CarInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeviceID" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Driver" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CarNumber" Type="System.String" DbType="NChar(7)" CanBeNull="true" />
+      <Column Name="CellphoneNumber" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Association Name="DeviceInfo_CarInfo" Member="DeviceInfo" ThisKey="DeviceID" OtherKey="DeviceID" Type="DeviceInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CoordinateType" Member="CoordinateType">
+    <Type Name="CoordinateType">
+      <Column Name="CoordinateTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CoordinateTypeName" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Association Name="CoordinateType_Location" Member="Location" ThisKey="CoordinateTypeID" OtherKey="CoordinateTypeID" Type="Location" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeviceInfo" Member="DeviceInfo">
+    <Type Name="DeviceInfo">
+      <Column Name="DeviceID" Type="System.String" DbType="Char(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CellphoneNumber" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Association Name="DeviceInfo_CarInfo" Member="CarInfo" ThisKey="DeviceID" OtherKey="DeviceID" Type="CarInfo" />
+      <Association Name="DeviceInfo_Location" Member="Location" ThisKey="DeviceID" OtherKey="DeviceID" Type="Location" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Location">
+    <Type Name="Location">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeviceID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="GpsTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SatelliteNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GpsLongitude" Type="System.Decimal" DbType="Decimal(18,10) NOT NULL" CanBeNull="false" />
+      <Column Name="GpsLatitude" Type="System.Decimal" DbType="Decimal(18,10) NOT NULL" CanBeNull="false" />
+      <Column Name="BaiduLongitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="BaiduLatitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="Direction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GpsSpeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObdSpeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EngineTemperature" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoordinateTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CoordinateType_Location" Member="CoordinateType" ThisKey="CoordinateTypeID" OtherKey="CoordinateTypeID" Type="CoordinateType" IsForeignKey="true" />
+      <Association Name="DeviceInfo_Location" Member="DeviceInfo" ThisKey="DeviceID" OtherKey="DeviceID" Type="DeviceInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

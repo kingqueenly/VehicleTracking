@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="VT">
+  <DataContextMoniker Name="/VTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4b470998-9a9a-4e16-ab7b-426bc237ea32" absoluteBounds="3.375, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/VTDataContext/CarInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17d27f4c-4567-4e08-81fc-2b1cd5f4451c" absoluteBounds="3.3899999999999997, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3588d94-87b5-4808-a403-cbff56e20169" absoluteBounds="0.625, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/VTDataContext/CoordinateType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6def0784-58c0-48cd-85fe-977f42bfec05" absoluteBounds="0.64000000000000012, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23010b9d-d4e2-4c07-be37-e83bb4cab53e" absoluteBounds="3.375, 3.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/VTDataContext/DeviceInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e1da88a-3fd2-458b-92ae-17beea35893c" absoluteBounds="3.39, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 3.125); (4.375 : 2.52089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VTDataContext/DeviceInfo/DeviceInfo_CarInfo" />
+      <nodes>
+        <classShapeMoniker Id="23010b9d-d4e2-4c07-be37-e83bb4cab53e" />
+        <classShapeMoniker Id="4b470998-9a9a-4e16-ab7b-426bc237ea32" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="afa20c70-490f-4026-b379-fe5b6c004981" absoluteBounds="5.75, 3.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/VTDataContext/Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe02ab57-5971-424a-af1e-4d60744b38b9" absoluteBounds="5.765, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.625 : 1.94399251302083); (1.625 : 5.720400390625); (5.75 : 5.720400390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VTDataContext/CoordinateType/CoordinateType_Location" />
+      <nodes>
+        <classShapeMoniker Id="f3588d94-87b5-4808-a403-cbff56e20169" />
+        <classShapeMoniker Id="afa20c70-490f-4026-b379-fe5b6c004981" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 4.03449625651042); (5.75 : 4.03449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VTDataContext/DeviceInfo/DeviceInfo_Location" />
+      <nodes>
+        <classShapeMoniker Id="23010b9d-d4e2-4c07-be37-e83bb4cab53e" />
+        <classShapeMoniker Id="afa20c70-490f-4026-b379-fe5b6c004981" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

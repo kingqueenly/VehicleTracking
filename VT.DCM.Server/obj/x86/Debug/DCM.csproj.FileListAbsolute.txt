@@ -1,0 +1,9 @@
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\obj\x86\Debug\DCM.Server.DCMServer.resources
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\obj\x86\Debug\DCM.csproj.GenerateResource.Cache
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\bin\Debug\log4net.dll
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\bin\Debug\VT.DCM.exe.config
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\bin\Debug\VT.DCM.exe
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\bin\Debug\VT.DCM.pdb
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\obj\x86\Debug\VT.DCM.Server.Properties.Resources.resources
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\obj\x86\Debug\VT.DCM.exe
+C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\DCM\obj\x86\Debug\VT.DCM.pdb

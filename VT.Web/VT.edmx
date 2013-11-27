@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VTModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="VTModelStoreContainer">
+          <EntitySet Name="CarInfo" EntityType="VTModel.Store.CarInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CoordinateType" EntityType="VTModel.Store.CoordinateType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeviceInfo" EntityType="VTModel.Store.DeviceInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Location" EntityType="VTModel.Store.Location" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TMP" EntityType="VTModel.Store.TMP" store:Type="Tables" store:Schema="dbo" store:Name="TMP">
+            <DefiningQuery>SELECT 
+      [TMP].[ID] AS [ID], 
+      [TMP].[BaiduLatitude] AS [BaiduLatitude], 
+      [TMP].[BaiduLongitude] AS [BaiduLongitude]
+      FROM [dbo].[TMP] AS [TMP]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CarInfo_DeviceInfo" Association="VTModel.Store.FK_CarInfo_DeviceInfo">
+            <End Role="DeviceInfo" EntitySet="DeviceInfo" />
+            <End Role="CarInfo" EntitySet="CarInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_CoordinateType" Association="VTModel.Store.FK_Location_CoordinateType">
+            <End Role="CoordinateType" EntitySet="CoordinateType" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_DeviceInfo" Association="VTModel.Store.FK_Location_DeviceInfo">
+            <End Role="DeviceInfo" EntitySet="DeviceInfo" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceID" Type="char" MaxLength="20" />
+          <Property Name="Driver" Type="nvarchar" MaxLength="10" />
+          <Property Name="CarNumber" Type="nchar" MaxLength="7" />
+          <Property Name="CellphoneNumber" Type="char" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="CoordinateType">
+          <Key>
+            <PropertyRef Name="CoordinateTypeID" />
+          </Key>
+          <Property Name="CoordinateTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CoordinateTypeName" Type="char" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="DeviceInfo">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="CellphoneNumber" Type="char" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceID" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="GpsTime" Type="datetime" Nullable="false" />
+          <Property Name="SatelliteNum" Type="int" />
+          <Property Name="GpsLongitude" Type="decimal" Nullable="false" Scale="10" />
+          <Property Name="GpsLatitude" Type="decimal" Nullable="false" Scale="10" />
+          <Property Name="BaiduLongitude" Type="decimal" Scale="10" />
+          <Property Name="BaiduLatitude" Type="decimal" Scale="10" />
+          <Property Name="Direction" Type="int" />
+          <Property Name="GpsSpeed" Type="int" />
+          <Property Name="ObdSpeed" Type="int" />
+          <Property Name="EngineTemperature" Type="int" />
+          <Property Name="CoordinateTypeID" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“VT.dbo.TMP”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="TMP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BaiduLatitude" Type="decimal" Scale="10" />
+          <Property Name="BaiduLongitude" Type="decimal" Scale="10" />
+        </EntityType>
+        <Association Name="FK_CarInfo_DeviceInfo">
+          <End Role="DeviceInfo" Type="VTModel.Store.DeviceInfo" Multiplicity="0..1" />
+          <End Role="CarInfo" Type="VTModel.Store.CarInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceInfo">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="CarInfo">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_CoordinateType">
+          <End Role="CoordinateType" Type="VTModel.Store.CoordinateType" Multiplicity="0..1" />
+          <End Role="Location" Type="VTModel.Store.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoordinateType">
+              <PropertyRef Name="CoordinateTypeID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="CoordinateTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_DeviceInfo">
+          <End Role="DeviceInfo" Type="VTModel.Store.DeviceInfo" Multiplicity="1" />
+          <End Role="Location" Type="VTModel.Store.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceInfo">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--生成过程中发现错误:
+      警告 6013: 表/视图“VT.dbo.Enterprise_Vehicle_Position_History”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="Enterprise_Vehicle_Position_History">
+        <Property Name="ID" Type="int" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VTModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="VTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CarInfoes" EntityType="VTModel.CarInfo" />
+          <EntitySet Name="CoordinateTypes" EntityType="VTModel.CoordinateType" />
+          <EntitySet Name="DeviceInfoes" EntityType="VTModel.DeviceInfo" />
+          <EntitySet Name="Locations" EntityType="VTModel.Location" />
+          <EntitySet Name="TMPs" EntityType="VTModel.TMP" />
+          <AssociationSet Name="FK_CarInfo_DeviceInfo" Association="VTModel.FK_CarInfo_DeviceInfo">
+            <End Role="DeviceInfo" EntitySet="DeviceInfoes" />
+            <End Role="CarInfo" EntitySet="CarInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_CoordinateType" Association="VTModel.FK_Location_CoordinateType">
+            <End Role="CoordinateType" EntitySet="CoordinateTypes" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_DeviceInfo" Association="VTModel.FK_Location_DeviceInfo">
+            <End Role="DeviceInfo" EntitySet="DeviceInfoes" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceID" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="Driver" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CarNumber" Type="String" MaxLength="7" Unicode="true" FixedLength="true" />
+          <Property Name="CellphoneNumber" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="DeviceInfo" Relationship="VTModel.FK_CarInfo_DeviceInfo" FromRole="CarInfo" ToRole="DeviceInfo" />
+        </EntityType>
+        <EntityType Name="CoordinateType">
+          <Key>
+            <PropertyRef Name="CoordinateTypeID" />
+          </Key>
+          <Property Name="CoordinateTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoordinateTypeName" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Locations" Relationship="VTModel.FK_Location_CoordinateType" FromRole="CoordinateType" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="DeviceInfo">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="CellphoneNumber" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="CarInfoes" Relationship="VTModel.FK_CarInfo_DeviceInfo" FromRole="DeviceInfo" ToRole="CarInfo" />
+          <NavigationProperty Name="Locations" Relationship="VTModel.FK_Location_DeviceInfo" FromRole="DeviceInfo" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="GpsTime" Type="DateTime" Nullable="false" />
+          <Property Name="SatelliteNum" Type="Int32" />
+          <Property Name="GpsLongitude" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+          <Property Name="GpsLatitude" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+          <Property Name="BaiduLongitude" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BaiduLatitude" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="Direction" Type="Int32" />
+          <Property Name="GpsSpeed" Type="Int32" />
+          <Property Name="ObdSpeed" Type="Int32" />
+          <Property Name="EngineTemperature" Type="Int32" />
+          <Property Name="CoordinateTypeID" Type="Int32" />
+          <NavigationProperty Name="CoordinateType" Relationship="VTModel.FK_Location_CoordinateType" FromRole="Location" ToRole="CoordinateType" />
+          <NavigationProperty Name="DeviceInfo" Relationship="VTModel.FK_Location_DeviceInfo" FromRole="Location" ToRole="DeviceInfo" />
+        </EntityType>
+        <EntityType Name="TMP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BaiduLatitude" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BaiduLongitude" Type="Decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <Association Name="FK_CarInfo_DeviceInfo">
+          <End Role="DeviceInfo" Type="VTModel.DeviceInfo" Multiplicity="0..1" />
+          <End Role="CarInfo" Type="VTModel.CarInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceInfo">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="CarInfo">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_CoordinateType">
+          <End Role="CoordinateType" Type="VTModel.CoordinateType" Multiplicity="0..1" />
+          <End Role="Location" Type="VTModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoordinateType">
+              <PropertyRef Name="CoordinateTypeID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="CoordinateTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_DeviceInfo">
+          <End Role="DeviceInfo" Type="VTModel.DeviceInfo" Multiplicity="1" />
+          <End Role="Location" Type="VTModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeviceInfo">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VTModelStoreContainer" CdmEntityContainer="VTEntities">
+          <EntitySetMapping Name="CarInfoes">
+            <EntityTypeMapping TypeName="VTModel.CarInfo">
+              <MappingFragment StoreEntitySet="CarInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="CarNumber" ColumnName="CarNumber" />
+                <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoordinateTypes">
+            <EntityTypeMapping TypeName="VTModel.CoordinateType">
+              <MappingFragment StoreEntitySet="CoordinateType">
+                <ScalarProperty Name="CoordinateTypeID" ColumnName="CoordinateTypeID" />
+                <ScalarProperty Name="CoordinateTypeName" ColumnName="CoordinateTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeviceInfoes">
+            <EntityTypeMapping TypeName="VTModel.DeviceInfo">
+              <MappingFragment StoreEntitySet="DeviceInfo">
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="VTModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="GpsTime" ColumnName="GpsTime" />
+                <ScalarProperty Name="SatelliteNum" ColumnName="SatelliteNum" />
+                <ScalarProperty Name="GpsLongitude" ColumnName="GpsLongitude" />
+                <ScalarProperty Name="GpsLatitude" ColumnName="GpsLatitude" />
+                <ScalarProperty Name="BaiduLongitude" ColumnName="BaiduLongitude" />
+                <ScalarProperty Name="BaiduLatitude" ColumnName="BaiduLatitude" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="GpsSpeed" ColumnName="GpsSpeed" />
+                <ScalarProperty Name="ObdSpeed" ColumnName="ObdSpeed" />
+                <ScalarProperty Name="EngineTemperature" ColumnName="EngineTemperature" />
+                <ScalarProperty Name="CoordinateTypeID" ColumnName="CoordinateTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMPs">
+            <EntityTypeMapping TypeName="VTModel.TMP">
+              <MappingFragment StoreEntitySet="TMP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BaiduLatitude" ColumnName="BaiduLatitude" />
+                <ScalarProperty Name="BaiduLongitude" ColumnName="BaiduLongitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="VT">
+        <EntityTypeShape EntityType="VTModel.CarInfo" Width="1.5" PointX="3" PointY="3.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTModel.CoordinateType" Width="1.5" PointX="3.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTModel.DeviceInfo" Width="1.5" PointX="0.75" PointY="3.625" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTModel.Location" Width="1.5" PointX="6" PointY="2.625" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTModel.TMP" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <AssociationConnector Association="VTModel.FK_CarInfo_DeviceInfo" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.5189925130208328" />
+          <ConnectorPoint PointX="3" PointY="4.5189925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="VTModel.FK_Location_CoordinateType" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="1.5478417968749998" />
+          <ConnectorPoint PointX="6.75" PointY="1.5478417968749998" />
+          <ConnectorPoint PointX="6.75" PointY="2.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="VTModel.FK_Location_DeviceInfo" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="5.4129850260416656" />
+          <ConnectorPoint PointX="1.5" PointY="6.1316943359375" />
+          <ConnectorPoint PointX="6" PointY="6.1316943359375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

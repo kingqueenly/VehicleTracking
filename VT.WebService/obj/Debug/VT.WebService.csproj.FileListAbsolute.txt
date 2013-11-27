@@ -1,0 +1,10 @@
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.WebService.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.WebService.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\obj\Debug\VT.WebService.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\obj\Debug\VT.WebService.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\log4net.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\obj\Debug\VT.WebService.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.Common.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.Common.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.Device.Model.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.WebService\bin\VT.Device.Model.pdb

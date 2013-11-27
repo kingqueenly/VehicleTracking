@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VTModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="VTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CarInfoes" EntityType="VTModel.CarInfo" />
+    <EntitySet Name="CoordinateTypes" EntityType="VTModel.CoordinateType" />
+    <EntitySet Name="DeviceInfoes" EntityType="VTModel.DeviceInfo" />
+    <EntitySet Name="Locations" EntityType="VTModel.Location" />
+    <EntitySet Name="TMPs" EntityType="VTModel.TMP" />
+    <AssociationSet Name="FK_CarInfo_DeviceInfo" Association="VTModel.FK_CarInfo_DeviceInfo">
+      <End Role="DeviceInfo" EntitySet="DeviceInfoes" />
+      <End Role="CarInfo" EntitySet="CarInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_CoordinateType" Association="VTModel.FK_Location_CoordinateType">
+      <End Role="CoordinateType" EntitySet="CoordinateTypes" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_DeviceInfo" Association="VTModel.FK_Location_DeviceInfo">
+      <End Role="DeviceInfo" EntitySet="DeviceInfoes" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CarInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceID" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="Driver" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="CarNumber" Type="String" MaxLength="7" Unicode="true" FixedLength="true" />
+    <Property Name="CellphoneNumber" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="DeviceInfo" Relationship="VTModel.FK_CarInfo_DeviceInfo" FromRole="CarInfo" ToRole="DeviceInfo" />
+  </EntityType>
+  <EntityType Name="CoordinateType">
+    <Key>
+      <PropertyRef Name="CoordinateTypeID" />
+    </Key>
+    <Property Name="CoordinateTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoordinateTypeName" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Locations" Relationship="VTModel.FK_Location_CoordinateType" FromRole="CoordinateType" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="DeviceInfo">
+    <Key>
+      <PropertyRef Name="DeviceID" />
+    </Key>
+    <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="CellphoneNumber" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="CarInfoes" Relationship="VTModel.FK_CarInfo_DeviceInfo" FromRole="DeviceInfo" ToRole="CarInfo" />
+    <NavigationProperty Name="Locations" Relationship="VTModel.FK_Location_DeviceInfo" FromRole="DeviceInfo" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="GpsTime" Type="DateTime" Nullable="false" />
+    <Property Name="SatelliteNum" Type="Int32" />
+    <Property Name="GpsLongitude" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+    <Property Name="GpsLatitude" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+    <Property Name="BaiduLongitude" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="BaiduLatitude" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="Direction" Type="Int32" />
+    <Property Name="GpsSpeed" Type="Int32" />
+    <Property Name="ObdSpeed" Type="Int32" />
+    <Property Name="EngineTemperature" Type="Int32" />
+    <Property Name="CoordinateTypeID" Type="Int32" />
+    <NavigationProperty Name="CoordinateType" Relationship="VTModel.FK_Location_CoordinateType" FromRole="Location" ToRole="CoordinateType" />
+    <NavigationProperty Name="DeviceInfo" Relationship="VTModel.FK_Location_DeviceInfo" FromRole="Location" ToRole="DeviceInfo" />
+  </EntityType>
+  <EntityType Name="TMP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BaiduLatitude" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="BaiduLongitude" Type="Decimal" Precision="18" Scale="10" />
+  </EntityType>
+  <Association Name="FK_CarInfo_DeviceInfo">
+    <End Role="DeviceInfo" Type="VTModel.DeviceInfo" Multiplicity="0..1" />
+    <End Role="CarInfo" Type="VTModel.CarInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfo">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="CarInfo">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_CoordinateType">
+    <End Role="CoordinateType" Type="VTModel.CoordinateType" Multiplicity="0..1" />
+    <End Role="Location" Type="VTModel.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoordinateType">
+        <PropertyRef Name="CoordinateTypeID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CoordinateTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_DeviceInfo">
+    <End Role="DeviceInfo" Type="VTModel.DeviceInfo" Multiplicity="1" />
+    <End Role="Location" Type="VTModel.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfo">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

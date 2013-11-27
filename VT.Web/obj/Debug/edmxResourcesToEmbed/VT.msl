@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VTModelStoreContainer" CdmEntityContainer="VTEntities">
+    <EntitySetMapping Name="CarInfoes">
+      <EntityTypeMapping TypeName="VTModel.CarInfo">
+        <MappingFragment StoreEntitySet="CarInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="CarNumber" ColumnName="CarNumber" />
+          <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoordinateTypes">
+      <EntityTypeMapping TypeName="VTModel.CoordinateType">
+        <MappingFragment StoreEntitySet="CoordinateType">
+          <ScalarProperty Name="CoordinateTypeID" ColumnName="CoordinateTypeID" />
+          <ScalarProperty Name="CoordinateTypeName" ColumnName="CoordinateTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceInfoes">
+      <EntityTypeMapping TypeName="VTModel.DeviceInfo">
+        <MappingFragment StoreEntitySet="DeviceInfo">
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="VTModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="GpsTime" ColumnName="GpsTime" />
+          <ScalarProperty Name="SatelliteNum" ColumnName="SatelliteNum" />
+          <ScalarProperty Name="GpsLongitude" ColumnName="GpsLongitude" />
+          <ScalarProperty Name="GpsLatitude" ColumnName="GpsLatitude" />
+          <ScalarProperty Name="BaiduLongitude" ColumnName="BaiduLongitude" />
+          <ScalarProperty Name="BaiduLatitude" ColumnName="BaiduLatitude" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="GpsSpeed" ColumnName="GpsSpeed" />
+          <ScalarProperty Name="ObdSpeed" ColumnName="ObdSpeed" />
+          <ScalarProperty Name="EngineTemperature" ColumnName="EngineTemperature" />
+          <ScalarProperty Name="CoordinateTypeID" ColumnName="CoordinateTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMPs">
+      <EntityTypeMapping TypeName="VTModel.TMP">
+        <MappingFragment StoreEntitySet="TMP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BaiduLatitude" ColumnName="BaiduLatitude" />
+          <ScalarProperty Name="BaiduLongitude" ColumnName="BaiduLongitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
