@@ -7,7 +7,7 @@ using System.IO;
 using System.Net.Sockets;
 using VT.Common;
 
-namespace VT.Device.Model
+namespace VT.Model.Device
 {
     public enum DeviceMessageType
     {

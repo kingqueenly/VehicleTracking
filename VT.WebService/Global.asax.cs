@@ -18,7 +18,10 @@ namespace VT.WebService
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Application.Lock();
+            Application.Add("", "");
+            
+            Application.UnLock();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

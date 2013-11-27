@@ -3,3 +3,8 @@ C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.Common\bin
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.Common\bin\Debug\log4net.dll
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.Common\obj\Debug\VT.Common.dll
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.Common\obj\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\obj\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\obj\Debug\VT.Common.pdb

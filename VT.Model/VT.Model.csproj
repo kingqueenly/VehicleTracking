@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CEB92980-5524-4F02-BE2A-9CA58A5FDEBD}</ProjectGuid>
+    <ProjectGuid>{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VT.Device.Model</RootNamespace>
-    <AssemblyName>VT.Device.Model</AssemblyName>
+    <RootNamespace>VT.Model</RootNamespace>
+    <AssemblyName>VT.Model</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Location.cs" />
-    <Compile Include="Message.cs" />
+    <Compile Include="Device\Location.cs" />
+    <Compile Include="Device\Message.cs" />
+    <Compile Include="UserInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

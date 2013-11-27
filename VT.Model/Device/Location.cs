@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using VT.Common;
 
-namespace VT.Device.Model
+namespace VT.Model.Device
 {
     public enum LocationCoordinateType
     {
@@ -49,12 +49,12 @@ namespace VT.Device.Model
 
     public class Location
     {
-        private string _deviceID;
+        private string _idCode;
 
-        public string DeviceID
+        public string IDCode
         {
-            get { return _deviceID; }
-            set { _deviceID = value; }
+            get { return _idCode; }
+            set { _idCode = value; }
         }
         private DateTime _gpsTime;
 
@@ -134,7 +134,7 @@ namespace VT.Device.Model
             //0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 
             string location = ByteHelper.BytesToHexString(buffer, buffer.Length);
             string[] details = location.Split(' ');
-            _deviceID = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}", details[1], details[2], details[3], details[4], details[5], details[6], details[7], details[8], details[9], details[10]);
+            _idCode = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}", details[1], details[2], details[3], details[4], details[5], details[6], details[7], details[8], details[9], details[10]);
             _gpsTime = DateTime.Parse(string.Format("20{0}-{1}-{2} {3}:{4}:{5}", details[16], details[17], details[18], details[19], details[20], details[21]));
 
             short wm = ByteHelper.GetShort(new byte[] { buffer[22], buffer[23] });

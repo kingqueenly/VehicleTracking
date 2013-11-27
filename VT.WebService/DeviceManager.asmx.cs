@@ -9,7 +9,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using VT.Common;
-using VT.Device.Model;
+using VT.DAL;
+using VT.Model.Device;
 
 namespace VT.WebService
 {
@@ -146,11 +147,10 @@ namespace VT.WebService
                             break;
                         case DeviceMessageType.LocationInfo:
                             //AA 12 34 56 78 90 00 00 00 00 01 0D 00 22 00 04 13 11 22 22 22 45 08 00 0F 07 10 40 33 01 30 30 39 50 3D 13 19 47 00 06 05 3A 00 01 00 00 00 01 95 AA
-                            Location locationMessage = new Location(message.MessageBuffer);
-                            if (locationMessage.IsGpsLocation && locationMessage.CoordinateType == LocationCoordinateType.GPS)
+                            Location location = new Location(message.MessageBuffer);
+                            if (location.IsGpsLocation && location.CoordinateType == LocationCoordinateType.GPS)
                             {
-                                LocationMessageHandler locationMessageHandler = new LocationMessageHandler();
-                                locationMessageHandler.Add(locationMessage);
+                                LocationDAL.AddPosition(location);
                             }
                             break;
                         default:

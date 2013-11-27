@@ -88,6 +88,7 @@
     <Content Include="Boundary.htm" />
     <Content Include="DATest.aspx" />
     <Content Include="HighChart.html" />
+    <Content Include="HttpTest.htm" />
     <Content Include="images\direction\arrow_0.png" />
     <Content Include="images\direction\arrow_112.png" />
     <Content Include="images\direction\arrow_135.png" />

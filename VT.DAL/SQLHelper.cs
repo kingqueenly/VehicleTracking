@@ -17,14 +17,14 @@ namespace VT.DAL
     /// The SqlHelper class is intended to encapsulate high performance, 
     /// scalable best practices for common uses of SqlClient.
     /// </summary>
-    public abstract class SqlHelper
+    public abstract class SQLHelper
     {
 
         //Database connection strings
-        public static readonly string ConnectionStringLocalTransaction =  ConfigurationManager.AppSettings["SQLConnString1"];
-        public static readonly string ConnectionStringInventoryDistributedTransaction =  ConfigurationManager.AppSettings["SQLConnString2"];
-        public static readonly string ConnectionStringOrderDistributedTransaction =  ConfigurationManager.AppSettings["SQLConnString3"];
-        public static readonly string ConnectionStringProfile =  ConfigurationManager.AppSettings["SQLProfileConnString"];
+        //public static readonly string ConnectionStringLocalTransaction =  ConfigurationManager.AppSettings["SQLConnString1"];
+        //public static readonly string ConnectionStringInventoryDistributedTransaction =  ConfigurationManager.AppSettings["SQLConnString2"];
+        //public static readonly string ConnectionStringOrderDistributedTransaction =  ConfigurationManager.AppSettings["SQLConnString3"];
+        public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["Vehicle_Tracking_Master_ConnectionString"].ConnectionString;
 
         // Hashtable to store cached parameters
         private static Hashtable parmCache = Hashtable.Synchronized(new Hashtable());

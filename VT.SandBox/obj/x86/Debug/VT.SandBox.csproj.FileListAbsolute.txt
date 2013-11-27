@@ -1,0 +1,13 @@
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\obj\x86\Debug\VT.SandBox.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.SandBox.exe.config
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.SandBox.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.SandBox.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\obj\x86\Debug\VT.SandBox.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\obj\x86\Debug\VT.SandBox.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.SandBox\bin\Debug\VT.Model.pdb

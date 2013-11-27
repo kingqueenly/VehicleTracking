@@ -5,7 +5,7 @@ using System.Text;
 using System.Net;
 using System.Web.Script.Serialization;
 using log4net;
-using VT.Device.Model;
+using VT.Model.Device;
 
 namespace VT.WebService
 {

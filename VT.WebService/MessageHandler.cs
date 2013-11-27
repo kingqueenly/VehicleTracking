@@ -6,7 +6,7 @@ using log4net;
 using System.Net.Sockets;
 using System.IO;
 using VT.Common;
-using VT.Device.Model;
+using VT.Model.Device;
 
 namespace VT.WebService
 {

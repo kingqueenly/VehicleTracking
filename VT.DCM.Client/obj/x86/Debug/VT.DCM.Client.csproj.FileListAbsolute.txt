@@ -12,3 +12,10 @@ C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DCM.Client
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DCM.Client\obj\x86\Debug\VT.DCM.Client.csproj.GenerateResource.Cache
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM-Client.exe
 C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM-Client.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\bin\Debug\DCM-Client.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\bin\Debug\DCM-Client.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM_Client.DCMClient.resources
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM_Client.Properties.Resources.resources
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\obj\x86\Debug\VT.DCM.Client.csproj.GenerateResource.Cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM-Client.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Client\obj\x86\Debug\DCM-Client.pdb
