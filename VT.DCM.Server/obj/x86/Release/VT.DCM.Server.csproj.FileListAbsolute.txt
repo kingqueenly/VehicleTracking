@@ -1,1 +1,0 @@
-C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\bin\Release\VT.DCM.Server.exe.config

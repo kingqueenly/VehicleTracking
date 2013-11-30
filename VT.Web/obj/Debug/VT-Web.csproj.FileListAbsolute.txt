@@ -1,4 +1,0 @@
-C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\VT-Web\bin\VT-Web.dll
-C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\VT-Web\bin\VT-Web.pdb
-C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\VT-Web\obj\Debug\VT-Web.dll
-C:\Users\AMC\documents\visual studio 2010\Projects\VehicleTracking\VT-Web\obj\Debug\VT-Web.pdb
