@@ -1,0 +1,20 @@
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.Device.Model.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.Device.Model.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\Visual Studio 2010\Projects\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\obj\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DAL\bin\Debug\VT.Model.pdb

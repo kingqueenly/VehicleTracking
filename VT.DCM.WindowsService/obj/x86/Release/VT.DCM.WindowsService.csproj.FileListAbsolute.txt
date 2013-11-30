@@ -1,0 +1,15 @@
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.DCM.WindowsService.exe.config
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.DCM.WindowsService.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.DCM.WindowsService.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.DAL.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.DAL.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Release\VT.Model.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Release\VT.DCM.WindowsService.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Release\VT.DCM.WindowsService.ProjectInstaller.resources
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Release\VT.DCM.WindowsService.csproj.GenerateResource.Cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Release\VT.DCM.WindowsService.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Release\VT.DCM.WindowsService.pdb

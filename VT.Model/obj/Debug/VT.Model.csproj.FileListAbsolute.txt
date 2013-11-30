@@ -1,0 +1,8 @@
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\bin\Debug\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\bin\Debug\VT.Model.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\obj\Debug\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\obj\Debug\VT.Model.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Model\obj\Debug\VT.Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Release\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Release\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\bin\Release\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\obj\Release\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Common\obj\Release\VT.Common.pdb
