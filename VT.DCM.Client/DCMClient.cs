@@ -36,6 +36,7 @@ namespace DCM_Client
         {
             IPAddress ip = IPAddress.Parse("127.0.0.1");
             //IPAddress ip = IPAddress.Parse("42.96.140.176");
+            //IPAddress ip = IPAddress.Parse("125.64.14.119");
             IPEndPoint remoteIPE = new IPEndPoint(ip, 5858);
             clntSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try

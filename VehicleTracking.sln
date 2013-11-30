@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VT.SandBox", "VT.SandBox\VT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VT.Model", "VT.Model\VT.Model.csproj", "{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VT.DCM.WindowsService", "VT.DCM.WindowsService\VT.DCM.WindowsService.csproj", "{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,16 @@ Global
 		{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Debug|x86.ActiveCfg = Debug|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Debug|x86.Build.0 = Debug|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Release|Any CPU.ActiveCfg = Release|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Release|x86.ActiveCfg = Release|x86
+		{D75E30E6-B3F2-4DD2-9B53-424CA9AB68E5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

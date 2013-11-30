@@ -24,8 +24,11 @@
 </html>
 <script type="text/javascript">
     var map = new BMap.Map("container");
-    var point = new BMap.Point(121.535615, 31.276752);
+    var point = new BMap.Point(104.1609902991, 30.6500039618);
     map.centerAndZoom(point, 17);
+    var marker = new BMap.Marker(point);
+
+    map.addOverlay(marker);
     var points = [
 	  new BMap.Point(121.5356439, 31.2810635),
 	  new BMap.Point(121.537615, 31.278752),

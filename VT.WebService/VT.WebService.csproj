@@ -57,8 +57,9 @@
   <ItemGroup>
     <Content Include="DeviceManager.asmx" />
     <Content Include="Global.asax" />
-    <Content Include="VehicleManager.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -68,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CredentialSoapHeader.cs" />
+    <Compile Include="JBODevice.cs" />
     <Compile Include="DeviceManager.asmx.cs">
       <DependentUpon>DeviceManager.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -75,14 +77,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LocationMessageHandler.cs" />
     <Compile Include="MessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\GetLocationsRequest.cs" />
-    <Compile Include="VehicleManager.asmx.cs">
-      <DependentUpon>VehicleManager.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VT.Common\VT.Common.csproj">

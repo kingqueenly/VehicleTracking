@@ -41,5 +41,50 @@ namespace VT.Common
             }
             return b;
         }
+
+        public static string GetEnglishMonth(int month)
+        {
+            string eMonth = "";
+            switch (month)
+            {
+                case 1:
+                    eMonth = "Jan";
+                    break;
+                case 2:
+                    eMonth = "Feb";
+                    break;
+                case 3:
+                    eMonth = "Mar";
+                    break;
+                case 4:
+                    eMonth = "Apr";
+                    break;
+                case 5:
+                    eMonth = "May";
+                    break;
+                case 6:
+                    eMonth = "Jun";
+                    break;
+                case 7:
+                    eMonth = "Jul";
+                    break;
+                case 8:
+                    eMonth = "Aug";
+                    break;
+                case 9:
+                    eMonth = "Sep";
+                    break;
+                case 10:
+                    eMonth = "Oct";
+                    break;
+                case 11:
+                    eMonth = "Nov";
+                    break;
+                case 12:
+                    eMonth = "Dec";
+                    break;
+            }
+            return eMonth;
+        }
     }
 }

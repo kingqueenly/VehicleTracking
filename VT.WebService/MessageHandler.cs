@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.IO;
 using VT.Common;
 using VT.Model.Device;
+using System.Configuration;
 
 namespace VT.WebService
 {
@@ -17,7 +18,7 @@ namespace VT.WebService
         NetworkStream _networkStream = null;
 
         //[begin]更新星历数据需要的字段
-        private static readonly string ephemerisPath = Environment.CurrentDirectory + "\\ephemeris.ee";
+        private static readonly string ephemerisPath = ConfigurationManager.AppSettings["EphemerisPath"];
         private static byte[] ees = null;
         private static int eesLen = 0;
         //[end]

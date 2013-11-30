@@ -1,0 +1,15 @@
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.DCM.WindowsService.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.DCM.WindowsService.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Debug\VT.DCM.WindowsService.ProjectInstaller.resources
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Debug\VT.DCM.WindowsService.csproj.GenerateResource.Cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Debug\VT.DCM.WindowsService.exe
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Debug\VT.DCM.WindowsService.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.DCM.WindowsService.exe.config
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\log4net.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\obj\x86\Debug\VT.DCM.WindowsService.csprojResolveAssemblyReference.cache
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.Common.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.DAL.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.Model.dll
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.Common.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.DAL.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.WindowsService\bin\Debug\VT.Model.pdb

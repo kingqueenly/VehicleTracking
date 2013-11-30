@@ -14,7 +14,7 @@ using log4net.Config;
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: XmlConfigurator(ConfigFileExtension = "config", Watch = true)] 
+[assembly: XmlConfigurator(ConfigFileExtension = "config", Watch = true)]
 
 
 // 将 ComVisible 设置为 false 使此程序集中的类型

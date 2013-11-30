@@ -14,26 +14,63 @@ using VT.Model.Device;
 
 namespace VT.WebService
 {
-    [WebService(Namespace = "vt.webservice.devicemanager")]
+    [WebService(Namespace = "VehicleTracking.WebService.DeviceManager")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     [System.Web.Script.Services.ScriptService]
     public class DeviceManager : System.Web.Services.WebService
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(DeviceManager));
-        private TcpListener tcpListener;
+        private static TcpListener tcpListener;
+        private static Thread threadListener;
 
         [WebMethod]
-        public void Start()
+        public string Start()
         {
-            Thread threadListener = new Thread(new ThreadStart(ListenerHanlder));
-            threadListener.Start();
+            //if (threadListener == null)
+            //{
+            //    threadListener = new Thread(new ThreadStart(ListenerHanlder));
+            //    threadListener.Start();
+            //    log.Debug("Begin to listen");
+            //}
+
+            return "Listining";
         }
 
         [WebMethod]
-        public void Stop()
+        public string Stop()
         {
- 
+            //log.Debug("[Start] - Stop listener]");
+            //string[] keys = Application.AllKeys;
+            //foreach (string key in keys)
+            //{
+            //    JBODevice device = Application[key] as JBODevice;
+            //    if (device != null)
+            //    {
+            //        device.Close();
+            //    }
+            //}
+
+            //tcpListener.Stop();
+            //threadListener.Abort();
+            //log.Debug("[End] - Stop listener]");
+            return "Stoped";
+        }
+
+        [WebMethod]
+        public List<string> JBODevices()
+        {
+            List<string> idCodes = new List<string>();
+            string[] keys = Application.AllKeys;
+            foreach (string key in keys)
+            {
+                JBODevice device = Application[key] as JBODevice;
+                if (device != null && device.TcpClient.Connected)
+                {
+                    idCodes.Add(device.IDCode);
+                }
+            }
+            return idCodes;
         }
 
         private void ListenerHanlder()
@@ -41,8 +78,10 @@ namespace VT.WebService
             IPAddress ip = IPAddress.Any;
             IPEndPoint localIPE = new IPEndPoint(ip, 5858);
             tcpListener = new TcpListener(localIPE);
-
-            tcpListener.Start();
+            if (!tcpListener.Server.IsBound)
+            {
+                tcpListener.Start();
+            }
 
             while (true)
             {
@@ -50,7 +89,6 @@ namespace VT.WebService
                 try
                 {
                     tcpClient = tcpListener.AcceptTcpClient();
-                    //lstDevices.Invoke(new AddListItemDelegate(AddListItem), new Device(tcpClient));
                 }
                 catch
                 {
@@ -60,7 +98,6 @@ namespace VT.WebService
 
                 Thread threadMessageHandler = new Thread(new ParameterizedThreadStart(ProcessOneMessage));
                 threadMessageHandler.Start(tcpClient);
-
             }
         }
 
@@ -72,29 +109,38 @@ namespace VT.WebService
 
             byte[] receiveBuffer = new byte[10 * 1024];
             byte[] decodedBuffer = null;
-            while (true)
+            //bool normalExit = false;
+            bool exitWhile = false;
+            while (!exitWhile)
             {
                 int receivedBufferSize = 0;
                 try
                 {
                     receivedBufferSize = ns.Read(receiveBuffer, 0, receiveBuffer.Length);
 
-                    if (receivedBufferSize <= 0) continue;
+                    if (receivedBufferSize <= 0)
+                    {
+                        RemoveUnconnectedDevices();
+                        break;
+                    }
 
                 }
                 catch (IOException iEx)
                 {
                     log.Error("IOException", iEx);
+                    RemoveUnconnectedDevices();
                     break;
                 }
                 catch (ObjectDisposedException odEx)
                 {
                     log.Error("ObjectDisposedException", odEx);
+                    RemoveUnconnectedDevices();
                     break;
                 }
                 catch (Exception ex)
                 {
                     log.Error("Exception", ex);
+                    RemoveUnconnectedDevices();
                     break;
                 }
 
@@ -110,6 +156,17 @@ namespace VT.WebService
                     if (message.MessageType == DeviceMessageType.MessageError) continue;
 
                     messageHandler.SendServerACK(message.MessageBuffer);
+
+                    string idcode = message.MessageHexEncoded.Substring(3, 29).Replace(" ", "");
+                    if (Application[idcode] == null)
+                    {
+                        Application.Lock();
+                        JBODevice jboDevice = new JBODevice(tcpClient);
+                        jboDevice.IDCode = idcode;
+                        Application.Add(idcode, jboDevice);
+                        Application.UnLock();
+                    }
+
                     switch (message.MessageType)
                     {
                         //case DeviceCommandType.Beat:
@@ -160,6 +217,19 @@ namespace VT.WebService
 
                 log.Debug("[End] - Process one message from remote");
 
+            }
+        }
+
+        private void RemoveUnconnectedDevices()
+        {
+            string[] keys = Application.AllKeys;
+            foreach (string key in keys)
+            {
+                JBODevice jboDevice = Application[key] as JBODevice;
+                if (jboDevice != null && !jboDevice.TcpClient.Connected)
+                {
+                    Application.Remove(key);
+                }
             }
         }
     }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Net;
 using System.Web.Script.Serialization;
 using VT.Model.Device;
+using VT.Common;
 
 namespace VT.DAL
 {
@@ -15,7 +16,7 @@ namespace VT.DAL
         public static void UpdateCurrentPosition(SqlParameter[] commandParameters)
         {
             string sql = @"
-            IF EXISTS(SELECT 1 FROM [Vehicle_Current_Location] WHERE IDCode = '12345678900000000001' )
+            IF EXISTS(SELECT 1 FROM [Vehicle_Current_Location] WHERE IDCode = @IDCode )
             BEGIN
             UPDATE [Vehicle_Current_Location]
                SET [GpsTime] = @GpsTime
@@ -109,7 +110,7 @@ namespace VT.DAL
 
         private static string GetTableName()
         {
-            return string.Format("History_Location_{0}", DateTime.Now.ToString("yyyy_MMM"));
+            return string.Format("History_Location_{0}_{1}", DateTime.Now.Year,Helper.GetEnglishMonth(DateTime.Now.Month));
         }
 
         private static BaiduCoordinate ConvertCoordinate(GpsCoordinate gpsCoord)

@@ -10,3 +10,4 @@ C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Web\bin\VT.Web.dll
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Web\bin\VT.Web.pdb
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Web\obj\Debug\VT.Web.dll
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Web\obj\Debug\VT.Web.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.Web\obj\Debug\VT.Web.csprojResolveAssemblyReference.cache

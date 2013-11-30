@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Device\JBOClient.cs" />
     <Compile Include="Device\Location.cs" />
     <Compile Include="Device\Message.cs" />
+    <Compile Include="JBODevice.cs" />
     <Compile Include="UserInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

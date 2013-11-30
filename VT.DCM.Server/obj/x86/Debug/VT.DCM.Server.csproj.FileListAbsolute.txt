@@ -25,3 +25,4 @@ C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\obj\x86\Debug\VT.DCM
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\obj\x86\Debug\VT.DCM.Server.csproj.GenerateResource.Cache
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\obj\x86\Debug\VT.DCM.Server.exe
 C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\obj\x86\Debug\VT.DCM.Server.pdb
+C:\Users\AMC\Documents\GitHub\VehicleTracking\VT.DCM.Server\obj\x86\Debug\VT.DCM.Server.csprojResolveAssemblyReference.cache

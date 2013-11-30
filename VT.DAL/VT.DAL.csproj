@@ -48,6 +48,10 @@
     <Compile Include="SQLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VT.Common\VT.Common.csproj">
+      <Project>{BEDC6F70-BF16-48FD-A31B-D626B65E6AC7}</Project>
+      <Name>VT.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VT.Model\VT.Model.csproj">
       <Project>{F687D34E-CDD6-42A7-B66A-51FA0305D0BE}</Project>
       <Name>VT.Model</Name>
